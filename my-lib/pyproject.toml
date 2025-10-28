@@ -1,0 +1,25 @@
+[project]
+name = "my-lib"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vikentiy Smetanin", email = "vikentiy.smetanin@axxonsoft.dev" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "other-lib",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+my-testing-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "my-testing-lib" }
+other-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "other-lib" }
+
+[dependency-groups]
+dev = [
+    "my-testing-lib[gui]",
+]

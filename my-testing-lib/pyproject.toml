@@ -1,0 +1,22 @@
+[project]
+name = "my-testing-lib"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vikentiy Smetanin", email = "vikentiy.smetanin@axxonsoft.dev" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+gui = [
+    "pyqt-extra-dep-lib",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+pyqt-extra-dep-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "pyqt-extra-dep-lib" }
