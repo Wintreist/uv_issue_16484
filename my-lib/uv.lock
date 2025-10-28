@@ -2,6 +2,9 @@ version = 1
 revision = 3
 requires-python = ">=3.12"
 
+[manifest]
+constraints = [{ name = "my-testing-lib", git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=my-testing-lib" }]
+
 [[package]]
 name = "my-lib"
 version = "0.1.0"
@@ -16,7 +19,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "other-lib", git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=other-lib" }]
+requires-dist = [{ name = "other-lib", git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=other-lib&branch=internal_test_branch" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "my-testing-lib", extras = ["gui"], git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=my-testing-lib" }]
@@ -24,7 +27,7 @@ dev = [{ name = "my-testing-lib", extras = ["gui"], git = "ssh://git@github.com/
 [[package]]
 name = "my-testing-lib"
 version = "0.1.0"
-source = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=my-testing-lib#2dc7aa7257c40029c68346d5d5bc3d7993613fd7" }
+source = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=my-testing-lib#cc49101f03715fbe6495f9e0bd142921aca81c5f" }
 
 [package.optional-dependencies]
 gui = [
@@ -34,15 +37,12 @@ gui = [
 [[package]]
 name = "other-lib"
 version = "0.1.0"
-source = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=other-lib#2dc7aa7257c40029c68346d5d5bc3d7993613fd7" }
-dependencies = [
-    { name = "my-testing-lib", extra = ["gui"] },
-]
+source = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=other-lib&branch=internal_test_branch#2e059c2dedfda28a36af62a367f6f28c738f26f2" }
 
 [[package]]
 name = "pyqt-extra-dep-lib"
 version = "0.1.0"
-source = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=pyqt-extra-dep-lib#2dc7aa7257c40029c68346d5d5bc3d7993613fd7" }
+source = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git?subdirectory=pyqt-extra-dep-lib#cc49101f03715fbe6495f9e0bd142921aca81c5f" }
 dependencies = [
     { name = "pyside6" },
 ]
