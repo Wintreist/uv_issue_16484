@@ -16,7 +16,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv.sources]
-my-testing-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "my-testing-lib" }
+my-testing-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "my-testing-lib", branch = "TESTING-BRANCH" }
 other-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "other-lib" }
 
 [dependency-groups]
