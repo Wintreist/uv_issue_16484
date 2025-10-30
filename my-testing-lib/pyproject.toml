@@ -7,7 +7,9 @@ authors = [
     { name = "Vikentiy Smetanin", email = "vikentiy.smetanin@axxonsoft.dev" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "other-lib",
+]
 
 [project.optional-dependencies]
 gui = [
@@ -19,4 +21,6 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv.sources]
-pyqt-extra-dep-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "pyqt-extra-dep-lib" }
+pyqt-extra-dep-lib = { path = "../pyqt-extra-dep-lib" }
+other-lib = { path = "../other-lib" }
+

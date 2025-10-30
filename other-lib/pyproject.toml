@@ -7,13 +7,9 @@ authors = [
     { name = "Vikentiy Smetanin", email = "vikentiy.smetanin@axxonsoft.dev" }
 ]
 requires-python = ">=3.12"
-dependencies = [
-    "my-testing-lib[gui]",
-]
+dependencies = []
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv.sources]
-my-testing-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "my-testing-lib" }
