@@ -15,9 +15,14 @@ dependencies = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.uv]
+override-dependencies = [
+    "my-testing-lib @ git+ssh://git@github.com/Wintreist/uv_issue_16484.git@test_branch_with_git_to_path#subdirectory=my-testing-lib"
+]
+
 [tool.uv.sources]
-my-testing-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "my-testing-lib" }
-other-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "other-lib" }
+# my-testing-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "my-testing-lib", branch = "test_update_git_to_path" }
+other-lib = { git = "ssh://git@github.com/Wintreist/uv_issue_16484.git", subdirectory = "other-lib", branch = "test_update_git_to_path" }
 
 [dependency-groups]
 dev = [
